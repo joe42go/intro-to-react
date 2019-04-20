@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My First React app</title>
+  </head>
+  <body>
+
+    <div id="shopping-list"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+    <script type="text/babel">
+
+       class List extends React.Component {
+         constructor(props) {
+             super(props);
+             this.state = {
+                 status: 'out of groceries'
+             }
+         }
+
+         render() {
+           return (
+             <div>
+               <h1>We are currently {this.state.status}</h1>
+               <img src={this.props.image} width="200" height="200" alt="shopping cart"/>
+               <p>We've gone shopping for the following items on {this.props.date.toLocaleDateString()}:</p>
+               <ul>
+                   <li>Milk</li>
+                   <li>Apples</li>
+                   <li>Tylenol</li>
+               </ul>
+             </div>
+           );
+         }
+       }
+
+       const info = {
+           date: new Date(),
+           image: 'https://n.pr/2ZqYz1p',
+       }
+
+
+
+       ReactDOM.render(
+         <List
+         date={info.date}
+         image={info.image} />, document.getElementById('shopping-list')
+       );
+    </script>
+  </body>
+</html>
