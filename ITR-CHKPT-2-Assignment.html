@@ -5,27 +5,29 @@
   </head>
   <body>
 
-    <div id="app"></div>
+    <div id="shopping-list"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
 
     <script type="text/babel">
-       class Greeting extends React.Component {
+       class List extends React.Component {
          render() {
            return (
              <div>
-               <h1>Hello World!</h1>
-               <h1>Hello {this.props.name}!</h1>
+               <ul>
+                   <li>Milk</li>
+                   <li>Apples</li>
+                   <li>Tylenol</li>
+               </ul>
              </div>
            );
          }
        }
 
-       ReactDOM.render()
-         <Greeting />, document.getElementById('app')
-         <Greeting name="Bloc Student" />, document.getElementById('app')
+       ReactDOM.render(
+         <List />, document.getElementById('shopping-list')
        );
     </script>
   </body>
